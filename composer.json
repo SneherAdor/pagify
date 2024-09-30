@@ -1,0 +1,41 @@
+{
+    "name": "millat/pagify",
+    "description": "Pagify is a flexible and dynamic page builder package for Laravel, allowing developers to create customizable pages with user-defined blocks and settings.",
+    "version": "1.1.0",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "pagify",
+        "laravel",
+        "page builder",
+        "laravel page builder",
+        "dynamic pages",
+        "blocks"
+    ],
+    "homepage": "https://github.com/sneherador/pagify",
+    "authors": [
+        {
+            "name": "Ahsanul Haque Millat",
+            "email": "sneherador.sa@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0|^9.0|^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Millat\\Pagify\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Millat\\Pagify\\ServiceProvider"
+            ]
+        }
+    }
+}
