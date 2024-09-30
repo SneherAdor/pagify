@@ -6,7 +6,7 @@ use Millat\Pagify\Block;
 
 class AboutUs extends Block
 {
-    protected $view = 'minimaltheme::site.blocks.about-us';
+    protected $view = 'site.blocks.about-us';
 
     public function addHeading()
     {
