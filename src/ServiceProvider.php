@@ -73,7 +73,7 @@ class ServiceProvider extends BaseServiceProvider
 
         // Publish assets
         $this->publishes([
-            __DIR__ . '/../public/pagify' => public_path('vendor/pagify'),
+            __DIR__ . '/../public' => public_path('vendor/pagify'),
             __DIR__ . '/../resources/views/layouts/pb-site.blade.php' => resource_path('views/layouts/pb-site.blade.php'),
         ], 'assets');
 

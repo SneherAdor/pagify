@@ -14,7 +14,7 @@
         <meta name="description" content="{{ $page->description }}" />
     @endif
 
-    <link rel="stylesheet" href="{{ asset(config('pagify.assets_path') . '/pagify/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset(config('pagify.assets_path') . '/css/bootstrap.min.css') }}">
 
     @stack(config('pagify.style_var'))
 
@@ -26,9 +26,9 @@
         @yield(config('pagify.site_section'))
     </main>
 
-    <script src="{{ asset(config('pagify.assets_path') . '/pagify/js/jquery.min.js') }}"></script>
+    <script src="{{ asset(config('pagify.assets_path') . '/js/jquery.min.js') }}"></script>
 
-    <script defer src="{{ asset(config('pagify.assets_path') . '/pagify/js/bootstrap.min.js') }}"></script>
+    <script defer src="{{ asset(config('pagify.assets_path') . '/js/bootstrap.min.js') }}"></script>
 
     @stack(config('pagify.script_var'))
 </body>
