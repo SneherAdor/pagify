@@ -20,10 +20,6 @@
             "role": "Developer"
         }
     ],
-    "require": {
-        "php": "^8.0",
-        "illuminate/support": "^8.0|^9.0|^10.0"
-    },
     "autoload": {
         "psr-4": {
             "Millat\\Pagify\\": "src/"
