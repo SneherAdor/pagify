@@ -103,7 +103,7 @@ class StyleService
         $styleSettings = $page->settings['section_data'][$gridId]['styles'] ?? [];
 
         if (!empty($styleSettings['content_width']) && $styleSettings['content_width'] == 'full_width') {
-            return 'class="container-fluid"';
+            return 'class="container-fluid px-0"';
         }
 
         if (!empty($styleSettings['content_width']) && $styleSettings['content_width'] == 'boxed') {

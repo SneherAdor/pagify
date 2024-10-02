@@ -65,7 +65,7 @@ if (!function_exists('getField')) {
      * @param string $field
      * @return mixed
      */
-    function getField(string $field)
+    function getField(string|array $field)
     {
         return Settings::getField($field);
     }
