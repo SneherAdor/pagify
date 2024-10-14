@@ -26,6 +26,13 @@ abstract class Block
     protected $icon = null;
     
     /**
+     * The block image.
+     *
+     * @var string
+     */
+    protected $image = null;
+    
+    /**
      * The block tab.
      *
      * @var string
@@ -56,6 +63,7 @@ abstract class Block
         $this->settings['id'] = $this->id ?: $this->convertClassNameToId(get_class($this));
         $this->settings['name'] = $this->name ?: __(ucwords(str_replace('-', ' ', $this->settings['id'])));
         $this->settings['icon'] = $this->icon ?: '<i class="icon-clipboard"></i>';
+        $this->settings['image'] = $this->image ?: '';
         $this->settings['view'] = $this->view ?: 'blocks.' . $this->settings['id'];
         $this->settings['tab'] = $this->tab ?: __(ucwords(str_replace('-', ' ', $this->settings['id'])));
     }

@@ -38,7 +38,7 @@
                                                     data-section="{{ $item['settings']['id'] }}"
                                                     id="{{ $item['settings']['id'] }}">
                                                     <a href="javascript:void(0)" class="pb-elementcontent">
-                                                        {!! $item['settings']['icon'] ?? '<i class="icon-slash"></i>' !!}
+                                                        {!! $item['settings']['image'] ?: $item['settings']['icon'] ?? '<i class="icon-slash"></i>' !!}
                                                         <span>{{ $item['settings']['name'] ?? __('pagify::pagify.no_name') }}</span>
                                                     </a>
                                                 </li>
