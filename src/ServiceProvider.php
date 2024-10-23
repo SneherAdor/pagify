@@ -86,5 +86,9 @@ class ServiceProvider extends BaseServiceProvider
         if (!$this->app->runningInConsole() && empty(config('pagify'))) {
             throw new Exception("No pagify config found. Please run: php artisan vendor:publish --provider=\"Millat\\Pagify\\ServiceProvider\" --tag=config");
         }
+        
+        $this->publishes([
+            __DIR__ . '/../database/migrations/2022_12_29_072511_create_pages_table.php' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_pages_table.php'),
+          ], 'pagify-migrations');
     }
 }

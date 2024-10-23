@@ -30,7 +30,7 @@
             {!! \Millat\Pagify\Services\StyleService::getSectionBackground() !!}
             @if (!empty($container))
                 <div {!! \Millat\Pagify\Services\StyleService::getContainerStyles() !!}>
-                    <div class="row">
+                    <div class="row g-0">
                         @foreach ($container as $column => $components)
                             <div class="{{ $columns[$column] }}">
                                 @foreach ($components as $component)
