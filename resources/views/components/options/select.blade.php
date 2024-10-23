@@ -20,7 +20,7 @@
 @if( !empty($repeater_type) && $repeater_type == 'single' )
     @if( !empty($options) && is_array($options) )         
         <div class="op-select"> 
-            <select @if(!empty($multi) && $multi) multiple data-multi_items="true" @endif class="op-input-field form-control op-selectoption {{ $class ?? '' }}" data-id="{{ $id ?? '' }}" @if(!empty($parent_rep)) data-parent_rep="{{$parent_rep}}" @endif name="{{ $name }}" data-placeholder="{{$placeholder ?? ''}}">
+            <select @if(!empty($multi) && $multi) multiple data-multi_items="true" @endif class="op-input-field form-control op-selectoption {{ $class ?? '' }}" data-selected-value={{ $selected_value }} data-id="{{ $id ?? '' }}" @if(!empty($parent_rep)) data-parent_rep="{{$parent_rep}}" @endif name="{{ $name }}" data-placeholder="{{$placeholder ?? ''}}">
                 
                 @foreach($options as $key=> $single)
                     @php
@@ -62,7 +62,7 @@
             <div class="op-textcontent">
                 @if( !empty($options) && is_array($options) )
                     <div class="op-select"> 
-                        <select @if(!empty($multi) && $multi) multiple data-multi_items="true" @endif class="op-input-field form-control op-selectoption {{ $class ?? '' }}" data-id="{{ $id ?? '' }}" @if(!empty($parent_rep)) data-parent_rep="{{$parent_rep}}" @endif name="{{ $name  }}"   data-placeholder="{{$placeholder ?? ''}}">
+                        <select @if(!empty($multi) && $multi) multiple data-multi_items="true" @endif class="op-input-field form-control op-selectoption {{ $class ?? '' }}" data-selected-value={{ is_array($selected_value) ? json_encode($selected_value) : $selected_value }} data-id="{{ $id ?? '' }}" @if(!empty($parent_rep)) data-parent_rep="{{$parent_rep}}" @endif name="{{ $name  }}"   data-placeholder="{{$placeholder ?? ''}}">
                             
                             @foreach($options as $key=> $single)
                                 @php
