@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Millat\Pagify\Traits\JsonFormatter;
 use Illuminate\Support\Facades\Cache;
 use Millat\Pagify\Sanitize;
+use Millat\Pagify\Services\FileUploadService;
 
 class Page extends Model
 {
@@ -91,6 +92,8 @@ class Page extends Model
         $page = Page::find($pageId);
 
         if ($page) {
+            FileUploadService::deletePageFiles($page->settings, $pageSettings);
+            
             $page->update(['settings' => $pageSettings]);
             Cache::forget('pagify_page_data' . $pageId);
 
