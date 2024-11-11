@@ -78,7 +78,7 @@ class FileUploadService
         $mimeType   = $file->getMimeType();
         $orgName    = $file->getClientOriginalName();
         $fileName   = $this->generateFileName($orgName);
-        $filePath   = Storage::disk('local')->putFileAs('public/uploads/pagify', $file, $fileName);
+        $filePath   = Storage::disk()->putFileAs('public/uploads/pagify', $file, $fileName);
         $fileSize   = $file->getSize();
 
         // Set default type and thumbnail
@@ -104,5 +104,38 @@ class FileUploadService
     private function generateFileName($originalName)
     {
         return rand(1, 9999) . now()->format('m-d-Y_hia_') . $originalName;
+    }
+    
+    /**
+     * Delete files that are no longer in the settings
+     */
+    public static function deletePageFiles($oldSettings, $newSettings): void
+    {
+        $oldPaths = self::extractImagePaths($oldSettings);
+        $newPaths = self::extractImagePaths($newSettings);
+    
+        $deletedPaths = array_diff($oldPaths, $newPaths);
+        foreach ($deletedPaths as $path) {
+            Storage::disk()->delete($path);
+        }
+    }
+    
+    /**
+     * Extract image paths from an array
+     */
+    private static function extractImagePaths($data) : array
+    {
+        $paths = [];
+    
+        array_walk_recursive($data, function ($value, $key) use (&$paths) {
+            // Decode JSON if it's an encoded image string
+            if (is_string($value) && $json = json_decode($value, true)) {
+                if (isset($json['path'])) {
+                    $paths[] = $json['path'];
+                }
+            }
+        });
+    
+        return $paths;
     }
 }
