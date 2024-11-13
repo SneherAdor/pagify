@@ -288,6 +288,7 @@ class PageBuilderController extends Controller
                 $html .= Settings::getField($field);
             }
             $html .= '</ul>';
+            $html .= '<script src="' . asset( config('pagify.assets_path') . '/js/settings.js') . '"></script>';
         }
 
         return $html;

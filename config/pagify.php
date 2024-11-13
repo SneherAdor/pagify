@@ -53,7 +53,7 @@ return [
     | URL structure and middleware for the page builder.
     |
     */
-
+    'domain_url' => '/',
     'preview_route' => 'page/{slug}',         // Route pattern for previewing pages.
     'url_prefix' => '',                       // Prefix for page builder URLs.
     'route_middleware' => [],                 // Middleware applied to page builder routes.
