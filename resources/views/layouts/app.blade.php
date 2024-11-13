@@ -13,7 +13,9 @@
 
 <body>
     @yield('builder-content')
-    
+    <script>
+        var domain = '{{ config('pagify.domain_url') }}';
+    </script>
     <script src="{{ asset( config('pagify.assets_path') . '/js/all.js') }}"></script>
     <script>
         $(document).ready(function() {

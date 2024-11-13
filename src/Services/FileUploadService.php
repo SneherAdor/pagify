@@ -126,6 +126,10 @@ class FileUploadService
     private static function extractImagePaths($data) : array
     {
         $paths = [];
+        
+        if (!is_array($data)) {
+            return $paths;
+        }
     
         array_walk_recursive($data, function ($value, $key) use (&$paths) {
             // Decode JSON if it's an encoded image string
