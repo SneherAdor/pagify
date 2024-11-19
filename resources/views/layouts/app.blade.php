@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ __('Page Builder') . ' | ' . $page->name }}</title>
     <link rel="icon" href="{{ asset('public/uploads/settings/favicon.png') }}" type="image/png" />
-    <link rel="stylesheet" href="{{ asset( config('pagify.assets_path') . '/css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset( config('pagify.assets_path') . '/css/all.min.css') }}">
 </head>
 
 <body>
@@ -16,7 +16,10 @@
     <script>
         var domain = '{{ config('pagify.domain_url') }}';
     </script>
-    <script src="{{ asset( config('pagify.assets_path') . '/js/all.js') }}"></script>
+    
+    {!! config('pagify.extra_js') !!}
+    
+    <script src="{{ asset( config('pagify.assets_path') . '/js/all.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             $(document).on('click', '.pb-addsection-info a i.icon-plus', function(e) {

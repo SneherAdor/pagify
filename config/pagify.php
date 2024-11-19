@@ -57,5 +57,5 @@ return [
     'preview_route' => 'page/{slug}',         // Route pattern for previewing pages.
     'url_prefix' => '',                       // Prefix for page builder URLs.
     'route_middleware' => [],                 // Middleware applied to page builder routes.
-
+    'extra_js' => ''
 ];

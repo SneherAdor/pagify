@@ -150,10 +150,8 @@
                 },
                 setData: function (dataTransfer, dragEl) {
                     // Create the clone (with content)
-                    dragGhost = dragEl.cloneNode(true).querySelector('.component-placeholder');
+                    dragGhost = dragEl.cloneNode(true).querySelector('.pb-section-content');
                     // Stylize it
-                    console.log('test start');
-                    console.log(dragGhost);
 
                     dragGhost.classList.add('pb-ghost');
                     // Place it into the DOM tree
