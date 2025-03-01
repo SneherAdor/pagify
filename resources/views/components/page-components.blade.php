@@ -48,7 +48,6 @@
                     </div>
                 </div>
             @endif
-
             @if (!empty($non_container))
                 @foreach ($non_container as $column => $components)
                     <div class="{{ $columns[$column] }}">
