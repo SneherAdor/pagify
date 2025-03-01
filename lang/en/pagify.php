@@ -134,15 +134,15 @@ return [
     'no_name'                                           => 'Missing Name',
     'slug_error'                                        => 'The slug has already been taken',
     'no_view_found'                                     => 'No View Found',
-    'deleted_successfully'                              => 'Deleted successfully"',
+    'deleted_successfully'                              => 'Deleted successfully',
     'demosite_res_title'                                => 'Demo site restricted',
     'demosite_res_txt'                                  => "You can't add/edit anything on the demo site",
     'make_home_page'                                    => "Make Home Page?",
     'yes'                                               => "Yes",
     'no'                                                => "No",
     'save'                                              => "Save",
-    'max_file_size' => 'max file size',              // Default layout for the option builder
-    'error_title' => 'error title',                     // Default section variable name for content
-    'add_more' => 'add more',                    // Push style variable for CSS files
-    'remove' => 'remove', 
+    'max_file_size'                                     => 'max file size',
+    'error_title'                                       => 'error title',
+    'add_more'                                          => 'add more',
+    'remove'                                            => 'remove',
 ];

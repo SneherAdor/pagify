@@ -22,5 +22,5 @@ Route::controller(PageBuilderController::class)->prefix(config('pagify.url_prefi
 });
 
 // Standalone routes outside the group
-Route::get('pages/{id}/iframe', [PageBuilderController::class, 'iframe'])->name('pagify.iframe'); // Show iframe view for previewing a page
+Route::get('pages/{id}/iframe', [PageBuilderController::class, 'iframe'])->middleware(config('pagify.route_middleware', []))->name('pagify.iframe'); // Show iframe view for previewing a page
 Route::post('pagify/upload/files', [PageBuilderController::class, 'uploadFiles'])->name('pagify.upload.files'); // Upload files for a page
